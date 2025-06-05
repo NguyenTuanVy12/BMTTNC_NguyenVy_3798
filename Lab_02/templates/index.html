@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thực hành An toàn thông tin nâng cao</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .list-group-item {
+      border: none;
+      padding: 15px;
+      font-size: 1.1rem;
+      transition: background-color 0.2s;
+    }
+    .list-group-item:hover {
+      background-color: #e9ecef;
+    }
+    .list-group-item a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+    }
+    .list-group-item a:hover {
+      color: #0056b3;
+    }
+    .logo-img {
+      max-width: 200px;
+      height: auto;
+    }
+    .title {
+      font-weight: 700;
+      color: #2c3e50;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">An Toàn Thông Tin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/caesar">Caesar Cipher</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/playfair">Playfair Cipher</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="card p-4 mx-auto" style="max-width: 600px;">
+      <img src="data:image/png;base64,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" 
+           alt="HUTECH Logo" class="logo-img d-block mx-auto mb-3">
+      <h4 class="title text-center">BÀI THỰC HÀNH BẢO MẬT THÔNG TIN NÂNG CAO</h4>
+      <div class="list-group mt-4">
+        <div class="list-group-item">
+          <a href="/caesar">Caesar Cipher</a>
+        </div>
+      </div>
+      <div class="list-group mt-4">
+        <div class="list-group-item">
+          <a href="/playfair">Playfair Cipher</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
